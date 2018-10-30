@@ -10,7 +10,7 @@ obvious quirks for this reason, but this interface should not be considered
 in any way complete - I am only demonstrating how to solve the problem stated above.
 
 The first implementation can be found mostly in [src/SimpleApp.js](src/SimpleApp.js). This uses 
-the built in feature of React Router called <NavLink>, which automatically detects when the pathname
+the built in feature of React Router called NavLink, which automatically detects when the pathname
 in the address bar matches the Link and provides functionality to add an active class.
 
 A second implementation can be found in [src/StatefulAppContainer.js](src/StatefulAppContainer.js). In this
