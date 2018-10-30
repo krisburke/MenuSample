@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
-import { Grid, Header } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 import StatefulSidebarMenu from "./StatefulSidebarMenu";
 import ViewContainer from "./ViewContainer";
-
-const ViewD = () => <Header size="large">View D</Header>;
-const ViewE = () => <Header size="large">View E</Header>;
-const ViewF = () => <Header size="large">View F</Header>;
-
-const routes = [
-    {
-        name: "viewD",
-        path: "/viewD",
-        content: ViewD,
-    },
-    {
-        name: "viewE",
-        path: "/viewE",
-        content: ViewE,
-    },
-    {
-        name:"viewF",
-        path: "/viewF",
-        content: ViewF,
-    }
-];
+import { routes } from './routes';
 
 class StatefulAppContainer extends Component {
     constructor(props) {
@@ -44,7 +23,7 @@ class StatefulAppContainer extends Component {
     }
 
     getRouteName(pathname = this.props.location.pathname) {
-        const route = routes.filter((route) => {
+        const route = routes.stateful.filter((route) => {
             return route.path === pathname;
         })[0];
         return (route ? route.name : null);
@@ -69,7 +48,7 @@ class StatefulAppContainer extends Component {
                                          handleMenuClick={this.handleMenuClick}/>
                 </Grid.Column>
                 <Grid.Column stretched width={10}>
-                    <ViewContainer routes={routes}/>
+                    <ViewContainer routes={routes.stateful}/>
                 </Grid.Column>
             </Grid>
         );

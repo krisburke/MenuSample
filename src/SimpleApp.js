@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Header, Menu, Grid } from "semantic-ui-react";
+import { Menu, Grid } from "semantic-ui-react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import ViewContainer from './ViewContainer';
-
-const ViewA = () => <Header size="large">View A</Header>;
-const ViewB = () => <Header size="large">View B</Header>;
-const ViewC = () => <Header size="large">View C</Header>;
+import { routes } from './routes';
 
 const SidebarMenu = () => {
     return (
@@ -17,32 +14,18 @@ const SidebarMenu = () => {
     );
 };
 
-const routes = [
-    {
-        path: "/viewA",
-        content: ViewA
-    },
-    {
-        path: "/viewB",
-        content: ViewB,
-    },
-    {
-        path: "/viewC",
-        content: ViewC,
-    }
-];
-
 export default class SimpleApp extends Component {
     render() {
         return (
             <div className="App">
+                <h1>SimpleApp</h1>
                 <Router>
                     <Grid>
                         <Grid.Column width={3}>
                             <SidebarMenu/>
                         </Grid.Column>
                         <Grid.Column stretched width={10}>
-                            <ViewContainer routes={routes}/>
+                            <ViewContainer routes={routes.simple}/>
                         </Grid.Column>
                     </Grid>
                 </Router>

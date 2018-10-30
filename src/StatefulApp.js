@@ -6,6 +6,7 @@ class StatefulApp extends Component {
     render() {
         return (
             <div className="App">
+                <h1>StatefulApp</h1>
                 <Router>
                     <StatefulAppContainer />
                 </Router>
